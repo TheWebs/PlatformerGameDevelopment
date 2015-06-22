@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="PlatformerGameDevelopment.Credits"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PlatformerGameDevelopment"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="700">
+    <Grid Background="#FF1D1D1D">
+        <TextBlock Margin="276,440,-276,-440" FontSize="18.667" FontFamily="Arial" Foreground="#FF4693BF">
+            <TextBlock.RenderTransform>
+                <TranslateTransform x:Name="translate" />
+            </TextBlock.RenderTransform>
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+                            <DoubleAnimation 
+                                From="80" To="-495" 
+                                Storyboard.TargetName="translate" 
+                                Storyboard.TargetProperty="Y"
+                                Duration="0:0:10" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+            Developed by:<LineBreak/>
+            --->Kiko298<LineBreak/>
+            --->Gnome12
+        </TextBlock>
+        <Button x:Name="Back" Content="Back" HorizontalAlignment="Left" Height="30" Margin="596,436,0,0" VerticalAlignment="Top" Width="79" Background="#FF464646" BorderBrush="Black" Foreground="White" FontSize="18.667" FontFamily="Arial" MouseEnter="Back_MouseEnter" MouseLeave="Back_MouseLeave" Click="Back_Click" Cursor="Hand"/>
+
+
+    </Grid>
+</UserControl>
